@@ -57,4 +57,9 @@ export class Portis extends Connector {
         });
     }
   }
+
+  public async deactivate(): Promise<void> {
+    this.portis.logout();
+    this.actions.resetState();
+  }
 }
